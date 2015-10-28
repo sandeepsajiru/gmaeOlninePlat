@@ -5,7 +5,6 @@
  */
 package onlinegaming.dblayer;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 /**

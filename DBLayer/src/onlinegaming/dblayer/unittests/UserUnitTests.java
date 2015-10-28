@@ -18,6 +18,9 @@ public class UserUnitTests {
     public static void main(String[] args) {
         
         OnilneGameDBLayer ogdbl = new OnilneGameDBLayer();
-        ogdbl.registerUser("dummy", "test", "testPWD", "nick", "",  1);
+        //ogdbl.registerUser("dummy", "test", "testPWD", "nick", "",  1);
+        ogdbl.setUserOnline(0, "test");
+        System.out.println(ogdbl.isAlreadyRegistered("test"));
+        System.out.println(ogdbl.isUserValid("test", "testPWD"));
     }
 }

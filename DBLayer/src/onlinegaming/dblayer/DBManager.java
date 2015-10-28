@@ -23,9 +23,9 @@ import java.util.logging.Logger;
  */
 public class DBManager {
 
-    String dbName = "onlineGaming";
+    String dbName = "mydb";
     String dbUserName = "root";
-    String dbPwd = "root";
+    String dbPwd = "111_aaaa";
     String loginTable = "user";
     Connection con;
     PreparedStatement ps;
@@ -51,8 +51,8 @@ public class DBManager {
             //ps = con.prepareStatement("select * from " + loginTable + " where Email=? and Password=?");
             ps = con.prepareStatement(query);
 
-            for (int i = 1; i <= params.length; i++) {
-                ps.setString(i, params[i]);
+            for (int i = 0; i < params.length; i++) {
+                ps.setString(i+1, params[i]);
             }
 
             rs = ps.executeQuery();
