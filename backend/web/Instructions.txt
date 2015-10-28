@@ -19,3 +19,6 @@ set JAVA_OPTS=%JAVA_OPTS% %LOGGING_CONFIG%
 
 :noJuliManager
 set JAVA_OPTS=%JAVA_OPTS% %LOGGING_MANAGER%
+
+
+6.  Add Library Reference to Project for 'Java EE Web 7 API Library'
