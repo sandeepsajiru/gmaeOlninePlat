@@ -12,7 +12,4 @@
 hs_err_pid*
 /backend/nbproject/private/
 /backend/build/
-/frontend/nbproject/private/
 /backend/dist/
-node_modules
-bower_components
