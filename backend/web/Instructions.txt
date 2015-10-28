@@ -1,0 +1,21 @@
+1. Install MySQL
+2. Install GIT
+3. Install Netbeans_All - With Tomcat
+4. Install NodeJS
+5. Update Tomcat catalina.bat (%ProgramFiles%\Apache Software Foundation\Tomcat\bin)
+
+Find the below configuration in your catalina.bat file.
+
+:noJuliConfig
+set "JAVA_OPTS=%JAVA_OPTS% %LOGGING_CONFIG%"
+
+:noJuliManager
+set "JAVA_OPTS=%JAVA_OPTS% %LOGGING_MANAGER%"
+
+Just remove the double quotes
+
+:noJuliConfig
+set JAVA_OPTS=%JAVA_OPTS% %LOGGING_CONFIG%
+
+:noJuliManager
+set JAVA_OPTS=%JAVA_OPTS% %LOGGING_MANAGER%
