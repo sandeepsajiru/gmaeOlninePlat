@@ -1,0 +1,19 @@
+GET http://localhost:8084/OnlineGaming/restful/users
+GET http://localhost:8084/OnlineGaming/restful/users/1
+POST http://localhost:8084/OnlineGaming/restful/users	Register
+POST http://localhost:8084/OnlineGaming/restful/users/login
+PUT online pending
+
+GET http://localhost:8084/OnlineGaming/restful/games
+GET http://localhost:8084/OnlineGaming/restful/games/1
+
+
+GET http://localhost:8084/OnlineGaming/restful/gameInstances
+GET http://localhost:8084/OnlineGaming/restful/gameInstances/1
+PUT http://localhost:8084/OnlineGaming/restful/gameInstances/1  UpdateGameStatus
+POST http://localhost:8084/OnlineGaming/restful/gameInstances
+
+
+POST http://localhost:8084/OnlineGaming/restful/gameInstancesOnlineUsers
+PUT http://localhost:8084/OnlineGaming/restful/gameInstancesOnlineUsers/score
+PUT http://localhost:8084/OnlineGaming/restful/gameInstancesOnlineUsers/endGame
