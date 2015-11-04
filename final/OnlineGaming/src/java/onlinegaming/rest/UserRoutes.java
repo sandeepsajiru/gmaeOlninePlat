@@ -1,16 +1,13 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package onlinegaming.rest;
 
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.POST;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MultivaluedMap;
 import onlinegaming.dblayer.*;
 
@@ -62,7 +59,7 @@ public class UserRoutes {
     @POST
     @Produces("application/json")
     @Path("/login")
-    public String doLogin(MultivaluedMap<String, String> formParams) {
+    public String doLogin(MultivaluedMap<String, String> formParams, @Context HttpServletRequest request) {
         JsonResponse response = new JsonResponse();
         String email = formParams.getFirst("email");
         String password = formParams.getFirst("password");
@@ -70,6 +67,7 @@ public class UserRoutes {
         OnilneGameDBLayer dbLayer = new OnilneGameDBLayer();
         if (dbLayer.isUserValid(email, password)) {
             response.addProperty("success", "true");
+            response.addProperty("session", request.getSession().getId());
         } else {
             response.addProperty("success", "false");
         }
