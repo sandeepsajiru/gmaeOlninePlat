@@ -1,5 +1,6 @@
 package onlinegaming.rest;
 
+import java.util.HashMap;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.PathParam;
@@ -13,6 +14,8 @@ import onlinegaming.dblayer.*;
 
 @Path("users")
 public class UserRoutes {
+    
+    private static HashMap<String, String> onlineUsers = new HashMap<>();
 
     public UserRoutes() {
     }
@@ -59,15 +62,15 @@ public class UserRoutes {
     @POST
     @Produces("application/json")
     @Path("/login")
-    public String doLogin(MultivaluedMap<String, String> formParams, @Context HttpServletRequest request) {
+    public String doLogin(MultivaluedMap<String, String> formParams) {
         JsonResponse response = new JsonResponse();
         String email = formParams.getFirst("email");
         String password = formParams.getFirst("password");
 
         OnilneGameDBLayer dbLayer = new OnilneGameDBLayer();
         if (dbLayer.isUserValid(email, password)) {
+            onlineUsers.put(email, email);
             response.addProperty("success", "true");
-            response.addProperty("session", request.getSession().getId());
         } else {
             response.addProperty("success", "false");
         }
