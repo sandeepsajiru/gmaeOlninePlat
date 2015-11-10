@@ -1,21 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package onlinegaming.rest;
 
+import java.util.HashMap;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.POST;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MultivaluedMap;
 import onlinegaming.dblayer.*;
 
 @Path("users")
 public class UserRoutes {
+    
+    private static HashMap<String, String> onlineUsers = new HashMap<>();
 
     public UserRoutes() {
     }
@@ -69,6 +69,7 @@ public class UserRoutes {
 
         OnilneGameDBLayer dbLayer = new OnilneGameDBLayer();
         if (dbLayer.isUserValid(email, password)) {
+            onlineUsers.put(email, email);
             response.addProperty("success", "true");
         } else {
             response.addProperty("success", "false");
