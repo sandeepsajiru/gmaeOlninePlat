@@ -2,20 +2,20 @@
 <html lang="en" class="">
     <head>
         <title>Online Gaming</title>
-  
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>  
         <script>
-          $(function(){
-            $('#header').load("./header.html");
-            $('#footer').load("./footer.html");
-          });
-            
+            $(function () {
+                $('#header').load("./header.html");
+                $('#footer').load("./footer.html");
+            });
+
         </script>
-        <div id="header"></div>
     </head>
     <body>
+        <div id="header"></div>
         <div class="container">		
-                <nav class="navbar navbar-default" role="navigation">
+            <nav class="navbar navbar-default" role="navigation">
                 <div class="container-fluid"> 
                     <div class="navbar-header"> 
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> 
@@ -60,10 +60,26 @@
                     </div>                   
                 </div>                 
             </nav>
-		<div>
+            <div class="container">
+                <p><h2><font  id="welcome" color="red">Welcome to Online Gaming</font></h2></p>
 
-		</div>
-	<div id="footer" class="footer"></div>	
+                <br><br>
+                <p><h3><strong><font color="cyan">Address</font></strong></h3></p>
+                <br>
+                <p><font color="cyan"> Address line 1</font></p>
+                <p><font color="cyan"> Address line 2</font></p>
+                <p><font color="cyan"> Address line 3</font></p>
+                <br>
+                <p><font color="yellow">Phone: +1 234 567 89</font></p>
+                <p><strong><font color="blue">Email: feedback@onlinegaming.com</font></strong></p>
+                <br>
+                <div class="alert alert-success fade in">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    Call now on above phone numbers (9:00 AM - 5:00 PM) Or Email us 24X7.
+                </div>
+
+            </div>
+            <div id="footer" class="footer"></div>	
     </body>
 </html>
 
